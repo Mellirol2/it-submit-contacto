@@ -1,241 +1,237 @@
-*{
-      margin: 0;
-   padding: 0;  
-   box-sizing: border-box; 
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+  --fuente-principal: Georgia, 'Times New Roman', Times, serif;
+  --fuente-secundaria: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+  --color-texto: #ffffff;
+  --color-fondo: #eef7ff;
+
+  --color-header: #4d869c;
+  --color-nav: #7ab2b2;
+  --color-footer: #cde8e5;
+
+  --color-borde: #7ab2b2;
+  --color-acento: #4d869c;
+
+  --sombra: rgba(0, 0, 0, 0.1);
 }
 
-
-body{
-    background-color: #eef7ff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
- 
+/* ===== ESTILOS GENERALES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-header{
-    width: 100%;
-    padding: 2px;
-    background-color: #4d869c;
-    color: #fff;
-    
-
+body {
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-principal);
 }
 
-nav{
-    background-color: #7ab2b2;
-    color: #fff;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+header {
+  width: 100%;
+  padding: 2px;
+  background-color: var(--color-header);
+  color: var(--color-texto);
 }
 
-nav ul{
-    list-style: none;
+nav {
+  background-color: var(--color-nav);
+  color: var(--color-texto);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav ul li{
-    display: inline-block;
-    padding: 10px;
+nav ul {
+  list-style: none;
 }
 
-nav ul li a{
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
+nav ul li {
+  display: inline-block;
+  padding: 10px;
 }
 
-/* nav ul li:hover{
-  background-color: #4d869c;
-} */
-
-/* linea de subrayado utilizando animacion de css */
-
-nav ul li:hover::after{
-	content: "";
-	width: 100%;
-	height: 3px;
-	background-color: #fff;
-	display: block;
-
-	position: relative;
-	top: 3px;
-
-	animation-name: ampliar-linea;
-	animation-duration: 0.5s;
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-texto);
+  padding: 10px;
 }
 
-
-
+/* Subrayado animado */
+nav ul li:hover::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-texto);
+  display: block;
+  position: relative;
+  top: 3px;
+  animation: ampliar-linea 0.5s;
+}
 
 @keyframes ampliar-linea {
-	from{
-		width: 0%;
-	}
-	to{
-		width: 100%;
-	}
+  from { width: 0%; }
+  to { width: 100%; }
 }
 
-p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+p {
+  font-family: var(--fuente-secundaria);
 }
 
-footer{
-    width: 100%;
-    padding: 5px;
-    background-color: #cde8e5;
-    text-align: center;
+footer {
+  width: 100%;
+  padding: 5px;
+  background-color: var(--color-footer);
+  text-align: center;
 }
 
-section{
-    width: 95%;
-    margin: 10px auto;
-    z-index: 50;
+/* ===== SECCIONES ===== */
+section {
+  width: 95%;
+  margin: 10px auto;
+  z-index: 50;
 }
 
-.icono{
-    position: relative;
-    top: 5px;
-}
-
-.hero{
-    width: 100%;
-    height: 400px;
-    margin: 0;
-    padding: 0;
-     
-
-    background-image: url("../assets/img/portada1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-
-}
-
-.medio{
-    width: 100%;
-    height: 150px;
-
-    background-image: url("../assets/img/cosas.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-/*Estilos de formulario*/
-form{
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 2px solid #7ab2b2;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-form h2{
-    text-align: center;
-    color: #4d869c;
-    margin-bottom: 20px;
-}
-
-form label{
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #4d869c;
-}
-
-form input, form textarea{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #7ab2b2;
-    border-radius: 6px;
-    font-size: 1em;
-}
-
-form input:focus, form textarea:focus{
-    outline: none;
-    border-color: #4d869c;
-    box-shadow: 0 0 5px rgba(77, 134, 156, 0.5);
-}
-
-.enviar{
-    width: 100%;
-    padding: 12px;
-    background-color: #4d869c;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3 ease;
-}
-
-.enviar:hover{
-    background-color: #7ab2b2;
-}
-
-/* From Uiverse.io by nikk7007 */ 
-.slice {
-  --c1: #202020;
-  --c2: #4d869c;
-  --size-letter: 18px;
-  padding: 0.5em 1em;
-  font-size: var(--size-letter);
-
-  background-color: transparent;
-  border: calc(var(--size-letter) / 6) solid var(--c2);
-  border-radius: 0.2em;
-  cursor: pointer;
-
-  overflow: hidden;
+.icono {
   position: relative;
-  transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+  top: 5px;
+}
 
-  & > .text {
-    font-weight: 700;
-    color: var(--c2);
-    position: relative;
-    z-index: 1;
-    transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+.hero {
+  width: 100%;
+  height: 400px;
+  background-image: url("../assets/img/portada1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin: 0;
+  padding: 0;
+}
+
+.medio {
+  width: 100%;
+  height: 150px;
+  background-image: url("../assets/img/cosas.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/* ===== FORMULARIO ===== */
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid var(--color-borde);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--sombra);
+}
+
+form h2 {
+  text-align: center;
+  color: var(--color-acento);
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-acento);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--color-acento);
+  box-shadow: 0 0 5px rgba(77, 134, 156, 0.5);
+}
+
+.enviar {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-acento);
+  color: var(--color-texto);
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enviar:hover {
+  background-color: var(--color-nav);
+}
+
+/* ===== MENÚ HAMBURGUESA ===== */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--color-texto);
+  padding: 10px 15px;
+}
+
+/* ===== MEDIA QUERY para móviles ===== */
+@media (max-width: 480px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color-nav);
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header h1 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  header h2 {
+    font-size: 1em;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .hero {
+    height: 250px;
+    background-size: cover;
+  }
+
+  section {
+    width: 90%;
+  }
+
+  p {
+    font-size: 0.95em;
   }
 }
 
-.slice::after {
-  content: "";
-
-  width: 0;
-  height: calc(300% + 1em);
-
-  position: absolute;
-  translate: -50% -50%;
-  inset: 50%;
-  rotate: 30deg;
-
-  background-color: var(--c2);
-  transition: 1000ms cubic-bezier(0.83, 0, 0.17, 1);
-}
-
-.slice:hover {
-  & > .text {
-    color: var(--c1);
-  }
-  &::after {
-    width: calc(120% + 1em);
-  }
-}
-
-.slice:active {
-  scale: 0.98;
-  filter: brightness(0.9);
-}
-
-/* From Uiverse.io by vinodjangid07 */ 
 .card {
   width: fit-content;
   height: fit-content;
@@ -309,81 +305,4 @@ form input:focus, form textarea:focus{
     opacity: 1;
   }
 }
-
-.seccion_gracias{
-  width: 80%;
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.btn_gracias{
-  position: relative;
-  top: 15px;
-  text-decoration: none;
-}
-
-.img_gracias{
-  width: 40%;
-  height: 40%;
-}
-
-/* ====== MENÚ HAMBURGUESA ====== */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #fff;
-  padding: 10px 15px;
-}
-
-/* ====== MEDIA QUERY para móviles ====== */
-@media (max-width: 480px) {
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #7ab2b2;
-    text-align: center;
-  }
-
-  nav ul li {
-    display: block;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  header h1 {
-    font-size: 1.4em;
-    text-align: center;
-  }
-
-  header h2 {
-    font-size: 1em;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  .hero {
-    height: 250px;
-    background-size: cover;
-  }
-
-  section {
-    width: 90%;
-  }
-
-  p {
-    font-size: 0.95em;
-  }
-}
-
 
